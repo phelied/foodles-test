@@ -21,7 +21,7 @@ You are free to chose the programming language that you are the most comfortable
 function frequencyOfWords(str, n) {
 
     // test to see if str and n are in the right type of data
-    if (str.length === 0) return "Sentence must have at least one words";
+    if (str.length === 0) return "str must have at least one words";
     if (typeof n !== "number") return "n must be a number";
     if (n < 1) return "n must be greater than 0";
     if (typeof str !== "string") return "str must be a string";
@@ -47,7 +47,7 @@ function frequencyOfWords(str, n) {
 console.log(
     frequencyOfWords("bar bar bar foo foo foo mii mii mii maa maa maa", 3)
 );
-// Test: same call as test 
+// Test: same call as technical test example
 console.log(
     frequencyOfWords("baz bar foo foo zblah zblah zblah baz toto bar", 3)
 );
@@ -67,7 +67,7 @@ console.log(
 // Test: if str is empty
 console.log(frequencyOfWords("", 3));
 
-// test if majuscule and minuscule are the same
+// Test if majuscule and minuscule are the same
 console.log(
     frequencyOfWords("BaR bar bar foo foo", 3)
 );
