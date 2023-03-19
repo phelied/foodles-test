@@ -1,0 +1,22 @@
+{
+  "name": "foodles-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phelied/foodles-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phelied/foodles-test/issues"
+  },
+  "homepage": "https://github.com/phelied/foodles-test#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}

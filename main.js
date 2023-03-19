@@ -1,12 +1,12 @@
-/* 
+/*
 
-1) Write a function that takes as input (sentence: String, n: Number) 
+1) Write a function that takes as input (sentence: String, n: Number)
 and returns a list of size `n` where each element contains a word and and the frequency of that word in `sentence`
 This list should be sorted by decreasing frequency and alphabetical order in case of tie.
 
-Example: 
+Example:
 Input: ("baz bar foo foo zblah zblah zblah baz toto bar", 3)
-Output: 
+Output:
 [
    ("zblah", 3),
    ("bar", 2),
@@ -21,10 +21,8 @@ You are free to chose the programming language that you are the most comfortable
 function frequencyOfWords(str, n) {
 
     // test to see if str and n are in the right type of data
-    if (str.length === 0) return "str must have at least one words";
-    if (typeof n !== "number") return "n must be a number";
-    if (n < 1) return "n must be greater than 0";
-    if (typeof str !== "string") return "str must be a string";
+    if (typeof str !== "string" || str.length === 0  ) throw new Error("Sentence must be a non-empty string");
+    if (typeof n !== "number" || n < 0) throw new Error("Number must be a positive number");
 
     // trim the string and split string into an array
     let words = str.trim().split(" "),
@@ -43,31 +41,14 @@ function frequencyOfWords(str, n) {
     return slicedArr.map((word) => [word, map[word]]);
 }
 
-// Test: if same frequency, sort alphabetically
-console.log(
-    frequencyOfWords("bar bar bar foo foo foo mii mii mii maa maa maa", 3)
-);
-// Test: same call as technical test example
-console.log(
-    frequencyOfWords("baz bar foo foo zblah zblah zblah baz toto bar", 3)
-);
-// Test: if n is greater than the number of words
-console.log(
-    frequencyOfWords("bar bar bar foo foo foo mii mii mii maa maa maa", 20)
-);
+/* Here is a test to see if the function works
 
-// Test: if n is less than 1
-console.log(
-    frequencyOfWords("bar bar bar foo foo foo mii mii mii maa maa maa", 0)
-);
-// Test: if n is not a number
-console.log(
-    frequencyOfWords("bar bar bar foo foo foo mii mii mii maa maa maa", "0")
-);
-// Test: if str is empty
-console.log(frequencyOfWords("", 3));
+try {
+    console.log(frequencyOfWords("baz bar foo foo zblah zblah zblah baz toto bar", 0));
+}
+catch (error) {
+    console.error(error);
+}
+*/
 
-// Test if majuscule and minuscule are the same
-console.log(
-    frequencyOfWords("BaR bar bar foo foo", 3)
-);
+module.exports = frequencyOfWords;
